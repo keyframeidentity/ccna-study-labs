@@ -1,47 +1,102 @@
 # ccna-study-labs
+
 Cisco CCNA study labs, Packet Tracer topologies, configurations, and troubleshooting notes.
-CCNA Study Labs
 
-A hands-on collection of Cisco networking labs built with Cisco Packet Tracer while studying CCNA topics.
-Lab Index
-Lab
-Topic
-Status
-01 Multi-Router OSPF (Area 0)
-Completed
+A hands-on collection of Cisco networking labs built with **Cisco Packet Tracer** while studying CCNA topics. Each lab includes practical configurations, verification results, and troubleshooting documentation.
 
-02 VLANs and Trunking
-Planned
+## Lab Index
 
-03 STP and EtherChannel
-Planned
+| Lab | Topic | Status |
+| :--- | :--- | :--- |
+| 01 | Multi-Router OSPF (Area 0) | Completed |
+| 02 | VLANs, Trunking & Inter-VLAN Routing | Completed |
+| 03 | EtherChannel Using LACP | Completed |
+| 04 | Spanning Tree Protocol (STP) | Planned |
+| 05 | Access Control Lists (ACLs) and NAT | Planned |
+| 06 | DHCP, DNS, and IPv4 Services | Planned |
+| 07 | Static Routing | Planned |
+| 08 | EIGRP | Planned |
+| 09 | First Hop Redundancy Protocols (FHRP) | Planned |
+| 10 | WAN and VPN Technologies | Planned |
+| 11 | Network Security | Planned |
+| 12 | SSH and Device Management | Planned |
+| 13 | Network Troubleshooting | Planned |
+| 14 | Enterprise Network Capstone | Planned |
 
-04 ACLs and NAT
-Planned
+## Completed Labs
 
-05 DHCP, DNS, and IPv4
-Planned
+### Lab 01 – Multi-Router OSPF
 
-Learning Goals
-  Configure and troubleshoot Cisco routers and switches.
-  Understand IPv4 addressing and subnetting.
-  Configure dynamic routing protocols.
-  Practice VLANs, trunks, and spanning tree.
-  Understand access control lists and NAT.
-  Build confidence with Cisco IOS commands.
-Lab Environment
-  Cisco Packet Tracer
-  Cisco 2911 routers
-  Cisco 2960 switches
-  End devices (PCs)
-  Cisco IOS CLI
-  
-Approach
+- Configured OSPF across three routers.
+- Established neighbor adjacencies in Area 0.
+- Verified dynamically learned routes.
+- Tested end-to-end connectivity between separate LANs.
+
+### Lab 02 – VLANs, Trunking & Inter-VLAN Routing
+
+- Created and assigned VLANs.
+- Configured 802.1Q trunk links.
+- Implemented router-on-a-stick inter-VLAN routing.
+- Verified connectivity between VLANs.
+
+### Lab 03 – EtherChannel Using LACP
+
+- Configured EtherChannel between two Cisco 2960 switches.
+- Established LACP negotiation using active and passive modes.
+- Configured an 802.1Q trunk over Port-channel 1.
+- Verified spanning-tree forwarding.
+- Tested redundancy by shutting down one physical link while maintaining the EtherChannel.
+
+## Learning Goals
+
+- Configure and troubleshoot Cisco routers and switches.
+- Understand IPv4 addressing and subnetting.
+- Configure dynamic routing protocols.
+- Practice VLANs, trunking, and spanning tree.
+- Configure EtherChannel and link redundancy.
+- Understand access control lists and NAT.
+- Build confidence with Cisco IOS commands.
+- Develop practical network troubleshooting skills.
+
+## Lab Environment
+
+- Cisco Packet Tracer
+- Cisco 2911 routers
+- Cisco 2960 switches
+- End devices (PCs)
+- Cisco IOS CLI
+
+## Repository Structure
+
+Each lab is organized into its own directory containing the Packet Tracer project, documentation, and supporting evidence.
+
+```text
+ccna-study-labs/
+├── ospf/
+├── 02-vlan-trunking/
+├── 03-etherchannel/
+├── 04-stp/
+├── 05-acl-nat/
+├── 06-dhcp-dns-ipv4/
+└── ...
+```
+
+## Approach
+
 Each lab is built hands-on from scratch and documented with:
-  Network topology
-  IP addressing plan
-  Device configurations
-  Verification commands and results
-  Troubleshooting notes
-  Lessons learned
-These labs are primarily for personal CCNA study and practical networking practice.
+
+- Network topology
+- IP addressing plan
+- Device configurations
+- Verification commands and results
+- Troubleshooting notes
+- Lessons learned
+- Packet Tracer project files and screenshots
+
+These labs are primarily for personal CCNA study, practical networking experience, and demonstrating hands-on Cisco networking skills.
+
+---
+
+**Project:** CCNA Study Labs  
+**Platform:** Cisco Packet Tracer  
+**Status:** In Progress
