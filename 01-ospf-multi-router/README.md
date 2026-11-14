@@ -108,27 +108,6 @@ Through this lab, I gained practical experience with:
 - Troubleshooting interface and routing configuration issues.
 - Verifying end-to-end connectivity across multiple networks.
 
-## Lab Evidence
-
-### 1. Network Topology
-
-![OSPF Network Topology](<img width="1008" height="660" alt="OSPF Topology Screenshot" src="https://github.com/user-attachments/assets/81fb29f4-059d-4e72-ae4f-c0c5eaa8cc0a" />
-)
-
-### 2. OSPF Neighbor Verification
-
-![OSPF Neighbor Verification](<img width="614" height="89" alt="OSPF_Neighbors" src="https://github.com/user-attachments/assets/8ad4bc77-d2ed-4465-9315-1dc5fd7a428b" />
-)
-
-### 3. Routing Table Verification
-
-![OSPF Routing Table](<img width="499" height="47" alt="R2_OSPF_ Routing_table" src="https://github.com/user-attachments/assets/3e421d4a-30cf-4bb0-835a-eb90d1ae990b" />
-)
-
-### 4. Connectivity Testing
-
-![Connectivity Testing](<img width="498" height="169" alt="ping_From_R2_to_R1_and_R3" src="https://github.com/user-attachments/assets/4e2a6057-fb75-4696-af86-7e23a8c3d091" />
-)
 
 ---
 
