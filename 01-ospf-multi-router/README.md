@@ -1,106 +1,122 @@
-Lab 01: Multi-Router OSPF
+# Lab 01: Multi-Router OSPF Configuration
 
-<ins>Status: Completed</ins>
+## Project Overview
 
-Objective
+This lab demonstrates the configuration and verification of **Open Shortest Path First (OSPF)** routing across a three-router network.
 
-Build a three-router network using OSPF Area 0 and establish connectivity between three separate LANs.
+The objective was to establish dynamic routing between three separate LANs using OSPF Area 0, allowing devices on different networks to communicate without manually configuring static routes.
 
-Network Topology
+## Network Topology
 
-R1: Connects LAN 1 to R2.
+The network consists of three interconnected routers, each serving its own LAN.
 
-R2: Connects LAN 2, R1, and R3.
+```text
+       LAN 1             LAN 2             LAN 3
+    192.168.10.0/24   192.168.20.0/24   192.168.30.0/24
+         |                 |                 |
+         R1 -------------- R2 -------------- R3
+         |                 |                 |
+         +------- OSPF Area 0 ---------------+
+```
 
-R3: Connects LAN 3 to R2.
+**Router Roles**
+
+| Router | Function |
+|:---|:---|
+| R1 | Connects LAN 1 to R2 |
+| R2 | Central router connecting LAN 2, R1, and R3 |
+| R3 | Connects LAN 3 to R2 |
 
 All three routers participate in OSPF Area 0.
 
-IP Addressing
+## IP Addressing Scheme
 
-LAN Networks
+### LAN Networks
 
-R1: 192.168.10.1/24
+| Device | LAN Gateway | Subnet |
+|:---|:---|:---|
+| R1 | 192.168.10.1 | /24 |
+| R2 | 192.168.20.1 | /24 |
+| R3 | 192.168.30.1 | /24 |
 
-R2: 192.168.20.1/24
+### Router-to-Router Links
 
-R3: 192.168.30.1/24
+| Connection | Network | Subnet Mask |
+|:---|:---|:---|
+| R1 ↔ R2 | 10.0.12.0 | /30 |
+| R2 ↔ R3 | 10.0.23.0 | /30 |
 
-Router-to-Router Links
+## OSPF Configuration
 
-R1 ↔ R2: 10.0.12.0/30
+OSPF was configured using Process ID 1 with all routers participating in Area 0.
 
-R2 ↔ R3: 10.0.23.0/30
+| Router | Router ID | OSPF Process | Area |
+|:---|:---|:---|:---|
+| R1 | 1.1.1.1 | 1 | 0 |
+| R2 | 2.2.2.2 | 1 | 0 |
+| R3 | 3.3.3.3 | 1 | 0 |
 
-OSPF Configuration
+**Routing Protocol:** OSPF  
+**Process ID:** 1  
+**Backbone Area:** Area 0
 
-Router
+## Verification & Testing
 
-Router ID
+The following Cisco IOS commands were used to verify interface status, OSPF neighbor relationships, and routing table entries.
 
-Area
-
-R1
-
-1.1.1.1
-
-0
-
-R2
-
-2.2.2.2
-
-0
-
-R3
-
-3.3.3.3
-
-0
-
-OSPF Process ID: 1
-
-Routing Area: 0
-
-Verification
-
-Commands used:
-
+```bash
 show ip interface brief
 show ip ospf neighbor
 show ip route ospf
 show ip protocols
+```
 
-Results:
+### Results
 
-OSPF neighbor relationships reached FULL.
+- OSPF neighbor relationships successfully reached the **FULL** state.
+- All three routers learned remote networks through OSPF.
+- OSPF routes appeared in the routing tables with the `O` route code.
+- PC1 successfully pinged PC3 across the network.
+- End-to-end connectivity was established between separate LANs.
 
-All routers learned remote networks through OSPF.
+<badge color="success">Successful end-to-end connectivity</badge>
 
-PC1 successfully pinged PC3 across the network.
+## Troubleshooting
 
-Troubleshooting
+Several configuration issues were identified and resolved during the lab.
 
-Issues encountered:
+| Issue | Resolution |
+|:---|:---|
+| R2 interface toward R3 was administratively down | Enabled interface using `no shutdown` |
+| Incorrect wildcard masks | Corrected wildcard masks to `0.0.0.3` for /30 networks |
+| Typo in R3 OSPF network statement | Corrected the OSPF network statement |
 
-R2 interface toward R3 was administratively down. Fixed with no shutdown.
+This troubleshooting reinforced the importance of verifying interface states, subnet masks, and routing protocol configurations.
 
-Incorrect wildcard masks were corrected to 0.0.0.3 on /30 networks.
+## Key Takeaways
 
-A typo in R3's OSPF network statement was corrected.
+Through this lab, I gained practical experience with:
 
-What I Learned
+- Configuring OSPF dynamic routing.
+- Establishing and verifying OSPF neighbor adjacencies.
+- Understanding router IDs and their role in OSPF.
+- Using wildcard masks to identify participating networks.
+- Identifying dynamically learned routes using the OSPF `O` route code.
+- Troubleshooting interface and routing configuration issues.
+- Verifying end-to-end connectivity across multiple networks.
 
-How OSPF establishes neighbor relationships.
+## Lab Files & Evidence
 
-How router IDs identify routers.
+The following supporting materials will be added:
 
-How wildcard masks select networks.
+- [ ] Cisco Packet Tracer project file (.pkt)
+- [ ] Network topology screenshot
+- [ ] OSPF neighbor verification screenshot
+- [ ] Routing table verification screenshot
+- [ ] Successful PC1-to-PC3 connectivity test
 
-How to identify OSPF routes using the O route code.
+---
 
-How to troubleshoot routing and interface problems.
-
-Lab Files
-
-Packet Tracer project and topology screenshots will be added here.
+**Project:** Cisco Multi-Router OSPF Lab  
+**Lab Number:** 01  
+**Status:** Completed
