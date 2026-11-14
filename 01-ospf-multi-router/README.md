@@ -111,8 +111,10 @@ The following supporting materials will be added:
 
 - [x] Cisco Packet Tracer project file (.pkt)
 - [x] Network topology screenshot
+
 <img width="1008" height="660" alt="OSPF Topology Screenshot" src="https://github.com/user-attachments/assets/d108f43e-ede9-4676-9ec9-2feb85c42cb5" />
 - [x] OSPF neighbor verification screenshot
+
 <img width="614" height="89" alt="OSPF_Neighbors" src="https://github.com/user-attachments/assets/55d06448-c90f-4729-b41f-dc956e6fd529" />
 - [x] Routing table verification screenshot
 <img width="499" height="47" alt="R2_OSPF_ Routing_table" src="https://github.com/user-attachments/assets/809916ba-eaf9-4c22-8d82-7534052c15b9" />
