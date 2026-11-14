@@ -4,6 +4,12 @@ Cisco CCNA study labs, Packet Tracer topologies, configurations, and troubleshoo
 
 A hands-on collection of Cisco networking labs built with **Cisco Packet Tracer** while studying CCNA topics. Each lab includes practical configurations, verification results, and troubleshooting documentation.
 
+Background
+
+I previously earned the Cisco CCNA certification and am currently working toward earning it again. This repository documents my hands-on preparation, reinforces networking fundamentals, and provides practical experience with Cisco routers, switches, and IOS configurations.
+
+Rather than relying solely on theory, each lab is built from scratch, tested, and documented with configurations, verification commands, troubleshooting notes, and Packet Tracer project files.
+
 ## Lab Index
 
 | Lab | Topic | Status |
