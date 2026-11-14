@@ -112,19 +112,23 @@ Through this lab, I gained practical experience with:
 
 ### 1. Network Topology
 
-![OSPF Network Topology](https://private-user-images.githubusercontent.com/5049674/705976738-d108f43e-ede9-4676-9ec9-2feb85c42cb5.png)
+![OSPF Network Topology](<img width="1008" height="660" alt="OSPF Topology Screenshot" src="https://github.com/user-attachments/assets/81fb29f4-059d-4e72-ae4f-c0c5eaa8cc0a" />
+)
 
 ### 2. OSPF Neighbor Verification
 
-![OSPF Neighbor Verification](https://private-user-images.githubusercontent.com/5049674/705976535-55d06448-c90f-4729-b41f-dc956e6fd529.png)
+![OSPF Neighbor Verification](<img width="614" height="89" alt="OSPF_Neighbors" src="https://github.com/user-attachments/assets/8ad4bc77-d2ed-4465-9315-1dc5fd7a428b" />
+)
 
 ### 3. Routing Table Verification
 
-![OSPF Routing Table](https://private-user-images.githubusercontent.com/5049674/705956572-809916ba-eaf9-4c22-8d82-7534052c15b9.png)
+![OSPF Routing Table](<img width="499" height="47" alt="R2_OSPF_ Routing_table" src="https://github.com/user-attachments/assets/3e421d4a-30cf-4bb0-835a-eb90d1ae990b" />
+)
 
 ### 4. Connectivity Testing
 
-![Connectivity Testing](https://private-user-images.githubusercontent.com/5049674/705954659-c9221f85-c963-4521-9152-733f5fa00a9c.png)
+![Connectivity Testing](<img width="498" height="169" alt="ping_From_R2_to_R1_and_R3" src="https://github.com/user-attachments/assets/4e2a6057-fb75-4696-af86-7e23a8c3d091" />
+)
 
 ---
 
