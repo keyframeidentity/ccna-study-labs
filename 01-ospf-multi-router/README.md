@@ -109,11 +109,16 @@ Through this lab, I gained practical experience with:
 
 The following supporting materials will be added:
 
-- [ ] Cisco Packet Tracer project file (.pkt)
+- [x] Cisco Packet Tracer project file (.pkt)
 - [ ] Network topology screenshot
-- [ ] OSPF neighbor verification screenshot
-- [ ] Routing table verification screenshot
-- [ ] Successful PC1-to-PC3 connectivity test
+<img width="1008" height="660" alt="OSPF Topology Screenshot" src="https://github.com/user-attachments/assets/d108f43e-ede9-4676-9ec9-2feb85c42cb5" />
+
+- [x] OSPF neighbor verification screenshot
+<img width="614" height="89" alt="OSPF_Neighbors" src="https://github.com/user-attachments/assets/55d06448-c90f-4729-b41f-dc956e6fd529" />
+- [x] Routing table verification screenshot
+<img width="499" height="47" alt="R2_OSPF_ Routing_table" src="https://github.com/user-attachments/assets/809916ba-eaf9-4c22-8d82-7534052c15b9" />
+- [x] Successful PC1-to-PC3 connectivity test     
+<img width="498" height="169" alt="ping_From_R2_to_R1_and_R3" src="https://github.com/user-attachments/assets/c9221f85-c963-4521-9152-733f5fa00a9c" />
 
 ---
 
