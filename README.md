@@ -10,6 +10,24 @@ I previously earned the Cisco CCNA certification and am currently working toward
 
 Rather than relying solely on theory, each lab is built from scratch, tested, and documented with configurations, verification commands, troubleshooting notes, and Packet Tracer project files.
 
+CCNA Preparation Plan
+
+My goal is to complete the hands-on labs in this repository and then revisit Neil Anderson's CCNA Udemy course as a comprehensive review before December 7, 2026.
+
+My preparation approach:
+
+Complete the planned Packet Tracer labs.
+
+Practice configuring and troubleshooting each technology from memory.
+
+Revisit Neil Anderson's CCNA course from beginning to end.
+
+Reinforce weaker topics with additional practice and review.
+
+Prepare for the CCNA exam by December 7, 2026.
+
+The combination of hands-on lab work and a full course review will help reinforce both practical configuration skills and exam knowledge.
+
 ## Lab Index
 
 | Lab | Topic | Status |
