@@ -1,4 +1,4 @@
-# Lab 06: Access Control Lists (ACLs) & NAT Configuration
+# Lab 08: Access Control Lists (ACLs) & NAT Configuration
 
 ## Project Overview
 
@@ -38,36 +38,36 @@ The network consists of two internal VLANs connected through a multilayer switch
 
 **Router Roles**
 
-| Device | Function                                   |
-| :----- | :----------------------------------------- |
-| SW1    | Layer 3 switching and inter-VLAN routing   |
-| R1     | Edge routing, NAT/PAT, and ACL enforcement |
-| R2     | Simulated ISP router                       |
-| PC1    | VLAN 10 client                             |
-| PC2    | VLAN 20 client                             |
-| PC3    | VLAN 20 client used for ACL testing        |
+| Device | Function |
+| :--- | :--- |
+| SW1 | Layer 3 switching and inter-VLAN routing |
+| R1 | Edge routing, NAT/PAT, and ACL enforcement |
+| R2 | Simulated ISP router |
+| PC1 | VLAN 10 client |
+| PC2 | VLAN 20 client |
+| PC3 | VLAN 20 client used for ACL testing |
 
 ## IP Addressing Scheme
 
 ### Internal LAN Networks
 
-| Device      | IP Address    | Subnet | Gateway      |
-| :---------- | :------------ | :----- | :----------- |
-| PC1         | 192.168.10.10 | /24    | 192.168.10.1 |
-| PC2         | 192.168.20.10 | /24    | 192.168.20.1 |
-| PC3         | 192.168.20.11 | /24    | 192.168.20.1 |
-| SW1 VLAN 10 | 192.168.10.1  | /24    | —            |
-| SW1 VLAN 20 | 192.168.20.1  | /24    | —            |
+| Device | IP Address | Subnet | Gateway |
+| :--- | :--- | :--- | :--- |
+| PC1 | 192.168.10.10 | /24 | 192.168.10.1 |
+| PC2 | 192.168.20.10 | /24 | 192.168.20.1 |
+| PC3 | 192.168.20.11 | /24 | 192.168.20.1 |
+| SW1 VLAN 10 | 192.168.10.1 | /24 | — |
+| SW1 VLAN 20 | 192.168.20.1 | /24 | — |
 
 ### Router Connections
 
-| Connection      | Interface    | IP Address       |
-| :-------------- | :----------- | :--------------- |
-| SW1 ↔ R1        | SW1 Gi0/1    | 192.168.100.2/30 |
-| SW1 ↔ R1        | R1 Gi0/0     | 192.168.100.1/30 |
-| R1 ↔ R2         | R1 S0/0/0    | 203.0.113.2/30   |
-| R1 ↔ R2         | R2 S0/0/0    | 203.0.113.1/30   |
-| ISP Test Server | R2 Loopback0 | 198.51.100.10    |
+| Connection | Interface | IP Address |
+| :--- | :--- | :--- |
+| SW1 ↔ R1 | SW1 Gi0/1 | 192.168.100.2/30 |
+| SW1 ↔ R1 | R1 Gi0/0 | 192.168.100.1/30 |
+| R1 ↔ R2 | R1 S0/0/0 | 203.0.113.2/30 |
+| R1 ↔ R2 | R2 S0/0/0 | 203.0.113.1/30 |
+| ISP Test Server | R2 Loopback0 | 198.51.100.10 |
 
 ## NAT and PAT Configuration
 
@@ -75,10 +75,10 @@ R1 was configured to translate traffic from both internal LAN networks using PAT
 
 ### NAT Interface Roles
 
-| Interface          | NAT Configuration |
-| :----------------- | :---------------- |
-| GigabitEthernet0/0 | Inside            |
-| Serial0/0/0        | Outside           |
+| Interface | NAT Configuration |
+| :--- | :--- |
+| GigabitEthernet0/0 | Inside |
+| Serial0/0/0 | Outside |
 
 ### NAT Access List
 
@@ -121,12 +121,12 @@ interface gigabitEthernet 0/0
 
 ### ACL Policy
 
-| Source Device           | Destination   | Action    |
-| :---------------------- | :------------ | :-------- |
-| PC1 - 192.168.10.10     | 198.51.100.10 | Deny ICMP |
-| PC2 - 192.168.20.10     | 198.51.100.10 | Permit    |
-| PC3 - 192.168.20.11     | 198.51.100.10 | Deny ICMP |
-| Other permitted traffic | Any           | Permit    |
+| Source Device | Destination | Action |
+| :--- | :--- | :--- |
+| PC1 - 192.168.10.10 | 198.51.100.10 | Deny ICMP |
+| PC2 - 192.168.20.10 | 198.51.100.10 | Permit |
+| PC3 - 192.168.20.11 | 198.51.100.10 | Deny ICMP |
+| Other permitted traffic | Any | Permit |
 
 The ACL filters traffic before NAT translation, allowing individual internal source addresses to be identified.
 
@@ -166,24 +166,24 @@ The NAT translation table also showed ICMP translations using `203.0.113.2` as t
 
 ### Connectivity Testing
 
-| Test                        | Expected Result | Actual Result           |
-| :-------------------------- | :-------------- | :---------------------- |
-| PC1 → ISP server            | Blocked         | Successful restriction  |
-| PC2 → ISP server            | Allowed         | Successful connectivity |
-| PC3 → ISP server            | Blocked         | Successful restriction  |
-| Internal VLAN communication | Allowed         | Successful connectivity |
+| Test | Expected Result | Actual Result |
+| :--- | :--- | :--- |
+| PC1 → ISP server | Blocked | Successful restriction |
+| PC2 → ISP server | Allowed | Successful connectivity |
+| PC3 → ISP server | Blocked | Successful restriction |
+| Internal VLAN communication | Allowed | Successful connectivity |
 
 ## Troubleshooting
 
 Several configuration issues were identified and resolved during the lab.
 
-| Issue                                              | Resolution                                                                            |
-| :------------------------------------------------- | :------------------------------------------------------------------------------------ |
-| PC1 continued reaching the ISP server              | Corrected ACL placement and rule ordering                                             |
-| Standard ACL blocked all PAT clients               | Removed the outbound WAN ACL because all clients shared the same translated public IP |
-| New deny statements were placed after permit rules | Rebuilt the extended ACL with deny statements before the permit statement             |
-| PC2 could not reach the ISP server                 | Removed the obsolete standard ACL from the WAN interface                              |
-| Individual device filtering was required           | Applied the extended ACL inbound on R1's internal interface before NAT                |
+| Issue | Resolution |
+| :--- | :--- |
+| PC1 continued reaching the ISP server | Corrected ACL placement and rule ordering |
+| Standard ACL blocked all PAT clients | Removed the outbound WAN ACL because all clients shared the same translated public IP |
+| New deny statements were placed after permit rules | Rebuilt the extended ACL with deny statements before the permit statement |
+| PC2 could not reach the ISP server | Removed the obsolete standard ACL from the WAN interface |
+| Individual device filtering was required | Applied the extended ACL inbound on R1's internal interface before NAT |
 
 This troubleshooting reinforced the importance of understanding ACL processing order and the relationship between NAT translation and packet filtering.
 
@@ -204,7 +204,7 @@ Through this lab, I gained practical experience with:
 
 ## Lab Files & Evidence
 
-The following supporting materials will be included:
+The following supporting materials are included:
 
 - [x] Cisco Packet Tracer project file (.pkt)
 - [x] Network topology screenshot
@@ -217,6 +217,6 @@ The following supporting materials will be included:
 
 ---
 
-**Project:** Cisco ACL and NAT Lab
-**Lab Number:** 06
+**Project:** Cisco ACL and NAT Lab  
+**Lab Number:** 08  
 **Status:** Completed
