@@ -71,6 +71,24 @@ The combination of hands-on lab work and a full course review will help reinforc
 - Verified spanning-tree forwarding.
 - Tested redundancy by shutting down one physical link while maintaining the EtherChannel.
 
+Lab 04 – Spanning Tree Protocol (STP)
+
+Configured and verified STP across three switches.
+Changed the root bridge through bridge priority configuration.
+Examined root, designated, and alternate port roles.
+Tested STP convergence after a link failure.
+Configured PortFast and BPDU Guard.
+Triggered and recovered from a BPDU Guard violation.
+
+Lab 05 – Layer 3 Switching & Inter-VLAN Routing
+Configured a Cisco 3560 multilayer switch.
+Enabled Layer 3 routing using ip routing.
+Created VLAN 10 and VLAN 20 SVIs as default gateways.
+Configured 802.1Q trunking between Layer 2 and Layer 3 switches.
+Converted the 2960 into a Layer 2 access switch.
+Verified connected routes in the routing table.
+Successfully tested communication between separate VLANs.
+
 ## Learning Goals
 
 - Configure and troubleshoot Cisco routers and switches.
