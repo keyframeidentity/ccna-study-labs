@@ -31,10 +31,10 @@ My preparation approach:
 | 03 | EtherChannel Using LACP | Completed |
 | 04 | Spanning Tree Protocol (STP) | Completed |
 | 05 | Layer 3 Switching & Inter-VLAN Routing | Completed |
-| 06 | Access Control Lists (ACLs) and NAT | Planned |
-| 07 | DHCP, DNS, and IPv4 Services | Planned |
-| 08 | Static Routing | Planned |
-| 09 | EIGRP | Planned |
+| 06 | Access Control Lists (ACLs) and NAT/PAT | Completed |
+| 07 | EIGRP Dynamic Routing | Completed |
+| 08 | Static and Default Routing | Planned |
+| 09 | DHCP, DNS, and IPv4 Services | Planned |
 | 10 | First Hop Redundancy Protocols (FHRP) | Planned |
 | 11 | WAN and VPN Technologies | Planned |
 | 12 | Network Security | Planned |
@@ -85,6 +85,28 @@ My preparation approach:
 - Verified connected routes in the routing table.
 - Successfully tested communication between separate VLANs.
 
+### Lab 06 – Access Control Lists (ACLs) and NAT/PAT
+
+- Configured extended ACLs to control traffic between internal networks and an external destination.
+- Applied an extended ACL inbound on the router interface.
+- Verified permitted and denied traffic using ACL counters.
+- Configured NAT inside and outside interfaces.
+- Created a standard ACL to identify internal networks eligible for translation.
+- Configured PAT overload using the router's outside interface address.
+- Verified NAT translations and statistics.
+- Troubleshot an ACL conflict that initially blocked translated traffic.
+- Tested successful and denied connectivity from multiple PCs.
+
+### Lab 07 – EIGRP Dynamic Routing
+
+- Configured EIGRP across three Cisco routers using Autonomous System 100.
+- Advertised LAN and router-to-router networks using wildcard masks.
+- Established EIGRP neighbor relationships between adjacent routers.
+- Verified learned routes using the `D` route code.
+- Examined EIGRP administrative distance, metrics, and next-hop addresses.
+- Verified routing table entries on all three routers.
+- Successfully tested bidirectional connectivity between PC1 and PC3.
+
 ## Learning Goals
 
 - Configure and troubleshoot Cisco routers and switches.
@@ -93,7 +115,9 @@ My preparation approach:
 - Practice VLANs, trunking, and spanning tree.
 - Configure EtherChannel and link redundancy.
 - Understand Layer 2 and Layer 3 switching.
-- Configure access control lists and NAT.
+- Configure access control lists and NAT/PAT.
+- Understand static and default routing.
+- Configure common IPv4 network services.
 - Build confidence with Cisco IOS commands.
 - Develop practical network troubleshooting skills.
 
@@ -118,9 +142,9 @@ ccna-study-labs/
 ├── 04-stp/
 ├── 05-layer3-intervlan/
 ├── 06-acl-nat/
-├── 07-dhcp-dns-ipv4/
+├── 07-eigrp/
 ├── 08-static-routing/
-├── 09-eigrp/
+├── 09-dhcp-dns-ipv4/
 ├── 10-fhrp/
 ├── 11-wan-vpn/
 ├── 12-network-security/
@@ -147,5 +171,5 @@ These labs are primarily for personal CCNA study, practical networking experienc
 
 **Project:** CCNA Study Labs  
 **Platform:** Cisco Packet Tracer  
-**Completed Labs:** 5  
+**Completed Labs:** 7  
 **Status:** In Progress
